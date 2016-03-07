@@ -1,0 +1,21 @@
+# Generic Files
+*~
+*.swp
+*.out
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+.idea
+
+# Latex Generated Files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
