@@ -9,8 +9,15 @@ def load_json(filename)
   end
 end
 
-load_json('resume.json')
-html_template = File.read('resume.html.liquid')
-template = Liquid::Template.parse(html_template)
+def render_template(ext)
+  tmp_file = File.read("templates/#{ext}/resume.#{ext}.liquid")
+  template = Liquid::Template.parse(tmp_file)
+  template.render('resume' => @json_resume)
+end
 
-puts template.render('resume' => @json_resume)
+load_json('resume.json')
+extensions = %w(html tex txt)
+
+extensions.each do |f|
+  puts render_template(f)
+end
