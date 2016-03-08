@@ -3,7 +3,10 @@
 require 'json'
 require 'liquid'
 
+require_relative 'tags/justify_date'
+require_relative 'tags/justify_daterange'
 require_relative 'tags/justify_text'
+require_relative 'tags/wrap_text'
 
 def load_json(filename)
   File.open(filename, 'r') do |f|
