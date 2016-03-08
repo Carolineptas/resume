@@ -1,1 +1,50 @@
-{{ resume.basics.name }}
+================================================================================
+{% assign b = resume.basics %}{{ b.name | upcase}} | {{ b.label }}
+================================================================================
+
+Contact
+--------------------------------------------------------------------------------
+
+Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }}
+Web      : {{ b.website }}
+{% for profile in b.profiles %}{% fixed_width profile.network 8 %} : {{ profile.url }}
+{% endfor %}
+Summary
+--------------------------------------------------------------------------------
+
+{% wrap_text b.summary %}
+
+Experience
+--------------------------------------------------------------------------------
+{% for w in resume.work %}
+{% justify_text w.company w.summary %}
+{% justify_daterange w.position w.startDate w.endDate %}
+
+{% for highlight in w.highlights %}* {{ highlight }}
+{% endfor %}{% endfor %}
+Education
+--------------------------------------------------------------------------------
+{% for edu in resume.education %}
+{% justify_text edu.institution edu.area %}
+{% justify_daterange edu.studyType edu.startDate edu.endDate %}
+{% endfor %}
+Awards, Scholarships, & Achievements
+--------------------------------------------------------------------------------
+{% for award in resume.awards %}
+{% justify_text award.title award.awarder %}
+{% justify_date award.summary award.date %}
+{% endfor %}
+Technical Skills
+--------------------------------------------------------------------------------
+{% assign ts = resume.skills | size | minus: 1 %}
+{% for s in resume.skills | limit: ts %}{{ s.name }}: {{ s.keywords | join: ", " }}
+{% endfor %}
+Skill Summary
+--------------------------------------------------------------------------------
+{% assign ss = resume.skills | last %}
+{% for item in ss.keywords %}* {{ item }}
+{% endfor %}
+Interests
+--------------------------------------------------------------------------------
+{% for interest in resume.interests %}
+{{ interest.name }}: {{ interest.keywords | join: ', ' }}{% endfor %}

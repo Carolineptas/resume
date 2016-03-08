@@ -30,7 +30,7 @@
       "website": "http://shoplocket.com/",
       "startDate": "2014-09-02",
       "endDate": "2014-12-19",
-      "summary": "ShopLocket is a platform for hardware entrepreneurs looking to bring innovative products to life and into the hands of visionary consumers.",
+      "summary": "Toronto, ON",
       "highlights": [
         "Created a powerful Jekyll build system using GruntJS, Bower, Haml, Sass",
         "Added new features to a shopping cart built with AngularJS",
@@ -45,7 +45,7 @@
       "website": "http://www.bnotions.com/",
       "startDate": "2013-09-03",
       "endDate": "2013-12-20",
-      "summary": "BNOTIONS is an award-winning Mobile, Data, and Analytics Innovation Firm. They are the partner of choice for organizations with the desire to disrupt.",
+      "summary": "Toronto, ON",
       "highlights": [
         "Built a rich and dynamic single-page web application using AngularJS",
         "Gained experience with Sass, Jade, GruntJS, Jasmine, npm",
@@ -59,7 +59,7 @@
       "website": "https://corp.flipp.com/",
       "startDate": "2013-01-02",
       "endDate": "2013-04-26",
-      "summary": "Flipp is the essential site for your weekly shopping.",
+      "summary": "Toronto, ON",
       "highlights": [
         "Created ad modules in CSS, JS, HTML serving millions of views/day",
         "Developed an authenticated API for returning JSON, RSS, and XML data",
@@ -74,7 +74,7 @@
       "website": "http://orbitgroup.ca/",
       "startDate": "2011-09-05",
       "endDate": "2012-08-31",
-      "summary": "Orbit is a leader in contact centre performance improvement",
+      "summary": "Markham, ON",
       "highlights": [
         "Rebuilt messaging/notification system using JSON web services",
         "Developed scripts, architecture and optimized stored procedures",
@@ -89,7 +89,7 @@
       "website": "http://orbitgroup.ca/",
       "startDate": "2011-01-03",
       "endDate": "2011-04-29",
-      "summary": "Orbit is a leader in contact centre performance improvement",
+      "summary": "Markham, ON",
       "highlights": [
         "Provided efficient resolution directly to clients, triaging technical issues",
         "Demonstrated technical expertise finding solutions to unique problems",
@@ -101,8 +101,8 @@
   "education": [
     {
       "institution": "University of Waterloo",
-      "area": "Honours Computer Engineering",
-      "studyType": "BASc",
+      "area": "Waterloo, ON",
+      "studyType": "BASc Honours Computer Engineering",
       "startDate": "2010-09-13",
       "endDate": "2015-06-13",
       "courses": [
@@ -172,7 +172,7 @@
       "title": "Best Presentation, U of T Space Design Contest",
       "date": "2010-05-13",
       "awarder": "University of Toronto",
-      "summary": "Best Presentation in an international engineering design competition"
+      "summary": "First place for international engineering design competition"
     }
   ],
   "skills": [
@@ -258,7 +258,7 @@
     {
       "name": "Internet",
       "keywords": [
-        "Latest web technologies",
+        "Latest web tech",
         "open-source projects",
         "software development blogs"
       ]
@@ -270,7 +270,7 @@
         "photography",
         "television",
         "video games",
-        "electronics/hardware",
+        "hardware",
         "biking/walking"
       ]
     }
