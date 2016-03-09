@@ -1,9 +1,168 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <title>{{ resume.basics.name }}</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
  </head>
  <body>
-  <h1>{{ resume.basics.name }}</h1>
+  <header>{% assign b = resume.basics %}
+    <h1>{{ b.name }}｜<small>{{ b.label }}</small></h1>
+    <section class="contact">
+      <h3>Contact</h3>
+      <div class="email">
+        <strong>Email: </strong><a href="mailto:{{ b.email }}">{{ b.email }}</a>
+      </div>
+      <div class="website">
+        <strong>Web: </strong><a href="{{ b.website }}">{{ b.website }}</a>
+      </div>
+      {% for p in b.profiles %}
+      <div class="network">
+        <strong>{{ p.network }}: </strong><a href="{{ p.url }}">{{ p.username }}</a>
+      </div>
+      {% endfor %}
+      <div class="location">
+        <strong>Location: </strong>{{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }}
+      </div>
+    </section>
+  </header>
+  <section class="skills">
+    <h2>Technical Skills</h2>
+    {% for s in resume.skills %}
+    <div class="item">
+      <div class="left">
+        {{ s.name }}:
+      </div>
+      <div class="right">
+        <strong>
+          {{ s.keywords | join: ", "}}
+        </strong>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="summary">
+    <h2>Summary</h2>
+    {{ resume.basics.summary }}
+  </section>
+  <section class="education">
+    <h2>Education</h2>
+    {% for e in resume.education %}
+    <div class="item">
+      <div class="left">
+        <div class="institution">
+          <strong>
+            {{ e.institution }}
+          </strong>
+        </div>
+        <div class="studyType">
+          {{ e.studyType }}
+        </div>
+      </div>
+      <div class="right">
+        <div class="area">
+          <strong>
+            {{ e.area }}
+          </strong>
+        </div>
+        <div class="date">
+          <span class="startDate">
+            {{ e.startDate | date: "%b %Y" }}
+          </span>
+          {% if e.endDate %}
+          <span class="endDate">
+            - {{ e.endDate | date: "%b %Y" }}
+          </span>
+          {% else %}
+          <span class="endDate">
+            - Present
+          </span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="experience">
+    <h2>Experience</h2>
+    {% for w in resume.work %}
+    <div class="item">
+      <div class="left">
+        <div class="company">
+          <strong>
+            {{ w.company }}
+          </strong>
+        </div>
+        <div class="position">
+          {{ w.position }}
+        </div>
+      </div>
+      <div class="right">
+        <div class="work-location">
+          <strong>
+            {{ w.summary }}
+          </strong>
+        </div>
+        <div class="date">
+          <span class="startDate">
+            {{ w.startDate | date: "%b %Y" }}
+          </span>
+          {% if w.endDate %}
+          <span class="endDate">
+            - {{ w.endDate | date: "%b %Y" }}
+          </span>
+          {% else %}
+          <span class="endDate">
+            - Present
+          </span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <ul>
+      {% for h in w.highlights %}
+      <li>{{ h }}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </section>
+  <section class="awards">
+    <h2>Awards, Scholarships, &amp; Achievements</h2>
+    {% for a in resume.awards %}
+    <div class="item">
+      <div class="left">
+        <div class="title">
+          <strong>
+            {{ a.title }}
+          </strong>
+        </div>
+        <div class="award-summary">
+          {{ a.summary }}
+        </div>
+      </div>
+      <div class="right">
+        <div class="awarder">
+          <strong>
+            {{ a.awarder }}
+          </strong>
+        </div>
+        <div class="date">
+          <span class="date">
+            {{ a.date | date: "%b %Y" }}
+          </span>
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  <section class="interests">
+    <h2>Interests</h2>
+    {% for i in resume.interests %}
+    <div class="interest">
+      <strong>{{ i.name }}: </strong>{{ i.keywords | join: ', ' }}
+    </div>
+    {% endfor %}
+  </section>
  </body>
 </html>
