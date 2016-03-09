@@ -5,6 +5,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
   <title>{{ resume.basics.name }}</title>
+  <style>
+    {{ style }}
+  </style>
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
  </head>
  <body>
@@ -13,18 +16,22 @@
     <section class="contact">
       <h3>Contact</h3>
       <div class="email">
-        <strong>Email: </strong><a href="mailto:{{ b.email }}">{{ b.email }}</a>
+        <strong>Email: </strong>
+        <a href="mailto:{{ b.email }}">{{ b.email }}</a>
       </div>
       <div class="website">
-        <strong>Web: </strong><a href="{{ b.website }}">{{ b.website }}</a>
+        <strong>Web: </strong>
+        <a href="{{ b.website }}">{{ b.website }}</a>
       </div>
       {% for p in b.profiles %}
       <div class="network">
-        <strong>{{ p.network }}: </strong><a href="{{ p.url }}">{{ p.username }}</a>
+        <strong>{{ p.network }}: </strong>
+        <a href="{{ p.url }}">{{ p.username }}</a>
       </div>
       {% endfor %}
       <div class="location">
-        <strong>Location: </strong>{{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }}
+        <strong>Location: </strong>
+        {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }}
       </div>
     </section>
   </header>
