@@ -26,24 +26,19 @@ Education
 --------------------------------------------------------------------------------
 {% for edu in resume.education %}
 {% justify_text edu.institution edu.area %}
-{% justify_daterange edu.studyType edu.startDate edu.endDate %}
-{% endfor %}
+{% justify_daterange edu.studyType edu.startDate edu.endDate %}{% endfor %}
+
 Awards, Scholarships, & Achievements
 --------------------------------------------------------------------------------
 {% for award in resume.awards %}
 {% justify_text award.title award.awarder %}
-{% justify_date award.summary award.date %}
-{% endfor %}
+{% justify_date award.summary award.date %}{% endfor %}
+
 Technical Skills
 --------------------------------------------------------------------------------
-{% assign ts = resume.skills | size | minus: 1 %}
-{% for s in resume.skills | limit: ts %}{{ s.name }}: {{ s.keywords | join: ", " }}
-{% endfor %}
-Skill Summary
---------------------------------------------------------------------------------
-{% assign ss = resume.skills | last %}
-{% for item in ss.keywords %}* {{ item }}
-{% endfor %}
+{% for s in resume.skills %}
+{{ s.name }}: {{ s.keywords | join: ", " }}{% endfor %}
+
 Interests
 --------------------------------------------------------------------------------
 {% for interest in resume.interests %}
