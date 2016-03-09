@@ -17,7 +17,7 @@ html, body {
 body {
   color:                      $color-dark;
   font-family:                $font-family-sans;
-  font-size:                  $font-size-small;
+  font-size:                  $font-size-footnote;
   font-weight:                300;
   line-height:                1.5;
 }
@@ -68,6 +68,27 @@ a {
   color:                      #2980b9;
 }
 
+header a {
+  color:                      $color-dark;
+  text-decoration:            none;
+}
+
+.logo, .mini-icon {
+  display:                    inline-block;
+  height:                     10rem;
+  vertical-align:             middle;
+  width:                      10rem;
+}
+
+.mini-icon {
+  height:                     2rem;
+  width:                      2rem;
+}
+
+.summary p {
+  text-align:                 justify;
+}
+
 .contact {
   font-size:                  $font-size-footnote;
 }
@@ -94,6 +115,12 @@ a {
 .right {
   float:                      right;
   text-align:                 right;
+}
+
+.right-header {
+  float:                      right;
+  padding-left:               2rem;
+  text-align:                 left;
 }
 
 .date {
