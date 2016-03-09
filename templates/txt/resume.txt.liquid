@@ -28,16 +28,17 @@ Education
 {% justify_text edu.institution edu.area %}
 {% justify_daterange edu.studyType edu.startDate edu.endDate %}{% endfor %}
 
+Technical Skills
+--------------------------------------------------------------------------------
+{% for s in resume.skills %}{% assign kw = s.keywords | join: ", " %}
+{% assign n = s.name | append: ":" %}{% justify_text n kw %}{% endfor %}
+
 Awards, Scholarships, & Achievements
 --------------------------------------------------------------------------------
 {% for award in resume.awards %}
 {% justify_text award.title award.awarder %}
-{% justify_date award.summary award.date %}{% endfor %}
-
-Technical Skills
---------------------------------------------------------------------------------
-{% for s in resume.skills %}
-{{ s.name }}: {{ s.keywords | join: ", " }}{% endfor %}
+{% justify_date award.summary award.date %}
+{% endfor %}
 
 Interests
 --------------------------------------------------------------------------------
