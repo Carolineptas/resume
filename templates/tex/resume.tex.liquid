@@ -6,7 +6,13 @@
 \usepackage{geometry}
 \usepackage{microtype}
 \usepackage[parfill]{parskip}
+\usepackage[explicit]{titlesec}
+\usepackage{trimspaces}
+\usepackage{ulem}
 
+%-------------------------------------------------------------------------------
+% Fonts and Appearance
+%-------------------------------------------------------------------------------
 \defaultfontfeatures{Ligatures=TeX}
 
 \setmainfont{Roboto Light}
@@ -15,6 +21,8 @@
 \newfontfamily\robotobold{Roboto Bold}
 \newfontfamily\palatino{Palatino Linotype}
 
+\titleformat{\section}{\Large\bfseries\addfontfeature{LetterSpace=-1}}{\thesection}{0em}{#1\hrule\vspace{-10mm}}
+
 \geometry{
   top=1in,
   inner=1in,
@@ -22,6 +30,21 @@
   bottom=1in
 }
 
+\setlist{noitemsep}
+\renewcommand\labelitemi{\small $\bullet$}
+
+%-------------------------------------------------------------------------------
+% Fonts
+%-------------------------------------------------------------------------------
+\def\trim#1{\ignorespaces#1\unskip}
+
+\newcommand{\itemlist}[2]{\noindent\makebox[\textwidth]{\trim{#1}\hfill \textbf{\trim{#2}}}}
+\newcommand{\itemtitle}[2]{\noindent\makebox[\textwidth]{\textbf{\trim{#1}}\hfill \textbf{\trim{#2}}}}
+\newcommand{\itemdetail}[2]{\noindent\makebox[\textwidth]{\trim{#1}\hfill \trim{#2}}}
+
+%-------------------------------------------------------------------------------
+% Resume
+%-------------------------------------------------------------------------------
 \begin{document}
 {% assign b = resume.basics %}
 {{ b.name }} \\
@@ -34,7 +57,7 @@ Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.country
 
 \section*{Technical Skills}
 {% for s in resume.skills %}
-{{ s.name }}: {{ s.keywords | join: ', '}} \\{% endfor %}
+\itemlist{ {{ s.name }}: }{ {{ s.keywords | join: ', '}} }{% endfor %}
 
 \section*{Summary}
 
@@ -42,15 +65,13 @@ Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.country
 
 \section*{Education}
 {% for e in resume.education %}
-{{ e.institution }} {{ e.area }} \\
-{{ e.studyType }} \\
-{{ e.startDate | date: '%b %Y' }} --- {{ e.endDate | date: '%b %Y' }} \\
+\itemtitle{ {{ e.institution }} }{ {{ e.area }} }
+\itemdetail{ {{ e.studyType }} }{ {{ e.startDate | date: '%b %Y' }} --- {{ e.endDate | date: '%b %Y' }} }
 {% endfor %}
 \section*{Experience}
 {% for w in resume.work %}
-{{ w.company }} {{ w.summary }} \\
-{{ w.position }} \\
-{{ w.startDate | date: '%b %Y' }} --- {{ w.endDate | date: '%b %Y' }} \\
+\itemtitle{ {{ w.company }} }{ {{ w.summary }} }
+\itemdetail{ {{ w.position }} }{ {{ w.startDate | date: '%b %Y' }} --- {{ w.endDate | date: '%b %Y' }} }
 \begin{itemize}{% for highlight in w.highlights %}
   \item {{ highlight }}{% endfor %}
 \end{itemize}
@@ -58,12 +79,12 @@ Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.country
 
 \section*{Awards, Scholarships, \& Achievements}
 {% for a in resume.awards %}
-{{ a.title }} {{ a.awarder }} \\
-{{ a.summary }} {{ a.date | date: '%b %Y' }} \\
+\itemtitle{ {{ a.title }} }{ {{ a.awarder }} }
+\itemdetail{ {{ a.summary }} }{ {{ a.date | date: '%b %Y' }} }
 {% endfor %}
 
 \section*{Interests}
 {% for i in resume.interests %}
-{{ i.name }}: {{ i.keywords | join: ', ' }} \\{% endfor %}
+\textbf{\trim{ {{ i.name }}: }} {{ i.keywords | join: ', ' }} \\{% endfor %}
 
 \end{document}
