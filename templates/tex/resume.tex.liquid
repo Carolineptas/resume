@@ -1,5 +1,69 @@
-\documentclass{article}
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage[parfill]{parskip}
+
+\defaultfontfeatures{Ligatures=TeX}
+
+\setmainfont{Roboto Light}
+\newfontfamily\robotolight{Roboto Light}
+\newfontfamily\robotomedium{Roboto Medium}
+\newfontfamily\robotobold{Roboto Bold}
+\newfontfamily\palatino{Palatino Linotype}
+
+\geometry{
+  top=1in,
+  inner=1in,
+  outer=1in,
+  bottom=1in
+}
 
 \begin{document}
-{{ resume.basics.name }}
+{% assign b = resume.basics %}
+{{ b.name }} \\
+{{ b.label }} \\
+
+Email: {{ b.email }} \\
+Web: {{ b.website }} \\{% for profile in b.profiles %}
+{{ profile.network }} : {{ profile.url }} \\{% endfor %}
+Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }} \\
+
+\section*{Technical Skills}
+{% for s in resume.skills %}
+{{ s.name }}: {{ s.keywords | join: ', '}} \\{% endfor %}
+
+\section*{Summary}
+
+{{ resume.basics.summary }}
+
+\section*{Education}
+{% for e in resume.education %}
+{{ e.institution }} {{ e.area }} \\
+{{ e.studyType }} \\
+{{ e.startDate | date: '%b %Y' }} --- {{ e.endDate | date: '%b %Y' }} \\
+{% endfor %}
+\section*{Experience}
+{% for w in resume.work %}
+{{ w.company }} {{ w.summary }} \\
+{{ w.position }} \\
+{{ w.startDate | date: '%b %Y' }} --- {{ w.endDate | date: '%b %Y' }} \\
+\begin{itemize}{% for highlight in w.highlights %}
+  \item {{ highlight }}{% endfor %}
+\end{itemize}
+{% endfor %}
+
+\section*{Awards, Scholarships, \& Achievements}
+{% for a in resume.awards %}
+{{ a.title }} {{ a.awarder }} \\
+{{ a.summary }} {{ a.date | date: '%b %Y' }} \\
+{% endfor %}
+
+\section*{Interests}
+{% for i in resume.interests %}
+{{ i.name }}: {{ i.keywords | join: ', ' }} \\{% endfor %}
+
 \end{document}

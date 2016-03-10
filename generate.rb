@@ -23,6 +23,7 @@ def escape_tex(input = '')
     input.gsub!(/&/, '\\\\&')
     input.gsub!(/LaTeX/, '\\\\LaTeX\\\\')
     input.gsub!(/#/, '\\\\#')
+    input.gsub!(/%/, '\\\\%')
     input.gsub!(/\$/, '\\\\$')
   end
   input
