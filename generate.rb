@@ -16,6 +16,18 @@ def load_json(filename)
   end
 end
 
+def escape_tex(input = '')
+  input.values.map { |i| escape_tex(i) } if input.is_a?(Hash)
+  input.map { |j| escape_tex(j) } if input.is_a?(Array)
+  if input.is_a?(String)
+    input.gsub!(/&/, '\\\\&')
+    input.gsub!(/LaTeX/, '\\\\LaTeX\\\\')
+    input.gsub!(/#/, '\\\\#')
+    input.gsub!(/\$/, '\\\\$')
+  end
+  input
+end
+
 def render_txt
   tmp_file = File.read('templates/txt/resume.txt.liquid')
   template = Liquid::Template.parse(tmp_file)
@@ -38,12 +50,20 @@ def render_html
 end
 
 def render_tex
+  escape_tex(@json_resume)
   tmp_file = File.read('templates/tex/resume.tex.liquid')
   template = Liquid::Template.parse(tmp_file)
 
   File.open('out/resume.tex', 'w') do |file|
     file.write template.render('resume' => @json_resume)
   end
+end
+
+def create_pdf
+  system 'xelatex -shell-escape out/resume.tex'
+  system 'mv resume.pdf out/'
+  system 'rm *.aux'
+  system 'rm *.log'
 end
 
 def generate
@@ -53,6 +73,7 @@ def generate
   render_txt
   render_html
   render_tex
+  create_pdf
 end
 
 generate
