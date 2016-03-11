@@ -29,6 +29,15 @@ def escape_tex(input = '')
   input
 end
 
+def escape_html(input = '')
+  input.values.map { |i| escape_html(i) } if input.is_a?(Hash)
+  input.map { |j| escape_html(j) } if input.is_a?(Array)
+  if input.is_a?(String)
+    input.gsub!(/&/, '&amp;')
+  end
+  input
+end
+
 def render_txt
   tmp_file = File.read('templates/txt/resume.txt.liquid')
   template = Liquid::Template.parse(tmp_file)
@@ -39,6 +48,8 @@ def render_txt
 end
 
 def render_html
+  json = @json_resume.dup
+  escape_html(json)
   tmp_file = File.read('templates/html/resume.html.liquid')
   template = Liquid::Template.parse(tmp_file)
 
@@ -46,17 +57,18 @@ def render_html
   css = Sass::Engine.new(scss, syntax: :scss).render
 
   File.open('out/resume.html', 'w') do |file|
-    file.write template.render('resume' => @json_resume, 'style' => css)
+    file.write template.render('resume' => json, 'style' => css)
   end
 end
 
 def render_tex
-  escape_tex(@json_resume)
+  json = @json_resume.dup
+  escape_tex(json)
   tmp_file = File.read('templates/tex/resume.tex.liquid')
   template = Liquid::Template.parse(tmp_file)
 
   File.open('out/resume.tex', 'w') do |file|
-    file.write template.render('resume' => @json_resume)
+    file.write template.render('resume' => json)
   end
 end
 
