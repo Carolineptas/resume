@@ -10,15 +10,16 @@
 \usepackage{trimspaces}
 \usepackage{ulem}
 \usepackage{xcolor}
-\usepackage{showframe}
+% \usepackage{showframe}
 
 %-------------------------------------------------------------------------------
 % Fonts and Appearance
 %-------------------------------------------------------------------------------
+\setlength\parindent{0pt}
+
 \definecolor{color0}{RGB}{51,51,51}
 \definecolor{color1}{RGB}{85,85,85}
 
-% \textcolor{color0}
 \defaultfontfeatures{Ligatures=TeX}
 
 \setmainfont[BoldFont={Roboto Medium}]{Roboto Light}
@@ -41,28 +42,87 @@
 %-------------------------------------------------------------------------------
 \def\trim#1{\ignorespaces#1\unskip}
 
-\newcommand{\header}[2]{\begin{minipage}{1.0\textwidth}
-\vskip 2em
-{\palatino \bfseries \fontsize{28}{28}\selectfont \trim{#1}}
-\vskip 0.5em
-{\palatino \addfontfeature{Color=color1} \fontsize{18}{18}\selectfont \trim{#2}}
-\end{minipage}
-\vskip 1em}
-\newcommand{\itemlist}[2]{\noindent\makebox[\textwidth]{\trim{#1}\hfill \textbf{\trim{#2}}}}
-\newcommand{\itemtitle}[2]{\noindent\makebox[\textwidth]{\textbf{\trim{#1}}\hfill \textbf{\trim{#2}}}}
-\newcommand{\itemdetail}[2]{\noindent\makebox[\textwidth]{\trim{#1}\hfill \trim{#2}}}
+\newcommand{\header}[5]
+{ %
+  \begin{minipage}{0.55\textwidth}
+    {\palatino \bfseries \fontsize{28}{28}\selectfont \trim{#1}}
+    \vskip 0.5em
+    {\palatino \addfontfeature{Color=color1} \fontsize{18}{18}\selectfont \trim{#2}}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.44\textwidth}
+    \begin{flushright}
+      Email: #3
+
+      Web: #4
+      {% for profile in resume.basics.profiles %}
+      {{ profile.network }} : {{ profile.username }}
+      {% endfor %}
+      Location: #5
+    \end{flushright}
+  \end{minipage}
+  \vskip 1em
+}
+
+\newcommand{\itemlist}[2]
+{ %
+  \begin{minipage}[b]{0.39\hsize}
+    \begin{flushleft}
+      \trim{#1}
+    \end{flushleft}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.59\hsize}
+    \begin{flushright}
+      \bfseries
+      \trim{#2}
+    \end{flushright}
+  \end{minipage}
+}
+
+\newcommand{\itemtitle}[2]
+{ %
+  \begin{minipage}[b]{0.7\hsize}
+    \begin{flushleft}
+      \bfseries
+      \trim{#1}
+    \end{flushleft}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.3\hsize}
+    \begin{flushright}
+      \bfseries
+      \trim{#2}
+    \end{flushright}
+  \end{minipage}
+}
+
+\newcommand{\itemdetail}[2]
+{ %
+  \begin{minipage}[b]{0.7\hsize}
+    \begin{flushleft}
+      \trim{#1}
+    \end{flushleft}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.3\hsize}
+    \begin{flushright}
+      \trim{#2}
+    \end{flushright}
+  \end{minipage}
+}
 
 %-------------------------------------------------------------------------------
 % Resume
 %-------------------------------------------------------------------------------
 \begin{document}
 {% assign b = resume.basics %}
-\header{ {{ b.name }} }{ {{ b.label }} }
-
-Email: {{ b.email }} \\
-Web: {{ b.website }} \\{% for profile in b.profiles %}
-{{ profile.network }} : {{ profile.url }} \\{% endfor %}
-Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }} \\
+\header
+{ {{ b.name }} }
+{ {{ b.label }} }
+{ {{ b.email }} }
+{ {{ b.website }} }
+{ {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }} }
 
 \section*{Technical Skills}
 {% for s in resume.skills %}
@@ -94,6 +154,7 @@ Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.country
 
 \section*{Interests}
 {% for i in resume.interests %}
-\textbf{\trim{ {{ i.name }}: }} {{ i.keywords | join: ', ' }} \\{% endfor %}
+\textbf{\trim{ {{ i.name }}: }} {{ i.keywords | join: ', ' }}
+{% endfor %}
 
 \end{document}
