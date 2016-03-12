@@ -44,13 +44,17 @@
 
 \newcommand{\header}[5]
 { %
-  \begin{minipage}{0.55\textwidth}
-    {\palatino \bfseries \fontsize{28}{28}\selectfont \trim{#1}}
-    \vskip 0.5em
-    {\palatino \addfontfeature{Color=color1} \fontsize{18}{18}\selectfont \trim{#2}}
+  % \begin{minipage}[t][][b]{0.1\hsize}
+  % \end{minipage}
+  \begin{minipage}[t][][b]{0.5\hsize}
+    \begin{flushleft}
+      {\palatino \bfseries \fontsize{28}{28}\selectfont \trim{#1}}
+      \vskip 0.5em
+      {\palatino \addfontfeature{Color=color1} \fontsize{18}{18}\selectfont \trim{#2}}
+    \end{flushleft}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.44\textwidth}
+  \begin{minipage}[t][][b]{0.35\hsize}
     \begin{flushright}
       Email: #3
 
