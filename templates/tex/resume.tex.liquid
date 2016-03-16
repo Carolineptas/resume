@@ -4,6 +4,7 @@
 \usepackage{enumitem}
 \usepackage{fontspec}
 \usepackage{geometry}
+\usepackage{hyperref}
 \usepackage{microtype}
 \usepackage[parfill]{parskip}
 \usepackage[explicit]{titlesec}
@@ -40,13 +41,15 @@
 %-------------------------------------------------------------------------------
 % Commands
 %-------------------------------------------------------------------------------
+{% assign b = resume.basics %}
+
 \def\trim#1{\ignorespaces#1\unskip}
 
-\newcommand{\header}[5]
+\newcommand{\header}[2]
 { %
   % \begin{minipage}[t][][b]{0.1\hsize}
   % \end{minipage}
-  \begin{minipage}[t][][b]{0.5\hsize}
+  \begin{minipage}[t][][b]{0.55\hsize}
     \begin{flushleft}
       {\palatino \bfseries \fontsize{28}{28}\selectfont \trim{#1}}
       \vskip 0.5em
@@ -54,15 +57,15 @@
     \end{flushleft}
   \end{minipage}
   \hfill
-  \begin{minipage}[t][][b]{0.35\hsize}
+  \begin{minipage}[t][][b]{0.44\hsize}
     \begin{flushright}
-      Email: #3
+      Email: {% hyper_ref b.email b.email %}
 
-      Web: #4
-      {% for profile in resume.basics.profiles %}
-      {{ profile.network }} : {{ profile.username }}
+      Web: {% hyper_ref b.website b.website %}
+      {% for profile in b.profiles %}
+      {{ profile.network }}: {% hyper_ref profile.url profile.username %}
       {% endfor %}
-      Location: #5
+      Location: {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }}
     \end{flushright}
   \end{minipage}
   \vskip 1em
@@ -120,13 +123,10 @@
 % Resume
 %-------------------------------------------------------------------------------
 \begin{document}
-{% assign b = resume.basics %}
+
 \header
 { {{ b.name }} }
 { {{ b.label }} }
-{ {{ b.email }} }
-{ {{ b.website }} }
-{ {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }} }
 
 \section*{Technical Skills}
 {% for s in resume.skills %}
@@ -134,7 +134,7 @@
 
 \section*{Summary}
 
-{{ resume.basics.summary }}
+{{ b.summary }}
 
 \section*{Education}
 {% for e in resume.education %}

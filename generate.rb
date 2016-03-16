@@ -5,6 +5,7 @@ require 'liquid'
 require 'sass'
 
 require_relative 'tags/fixed_width'
+require_relative 'tags/hyper_ref'
 require_relative 'tags/justify_date'
 require_relative 'tags/justify_daterange'
 require_relative 'tags/justify_text'
