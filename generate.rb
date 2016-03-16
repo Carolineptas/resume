@@ -11,6 +11,10 @@ require_relative 'tags/justify_daterange'
 require_relative 'tags/justify_text'
 require_relative 'tags/wrap_text'
 
+def deep_copy(o)
+  Marshal.load(Marshal.dump(o))
+end
+
 def load_json(filename)
   File.open(filename, 'r') do |f|
     @json_resume = JSON.load(f)
@@ -39,6 +43,15 @@ def escape_html(input = '')
   input
 end
 
+def escape_md(input = '')
+  input.values.map { |i| escape_md(i) } if input.is_a?(Hash)
+  input.map { |j| escape_md(j) } if input.is_a?(Array)
+  if input.is_a?(String)
+    input.gsub!(/#/, '\#')
+  end
+  input
+end
+
 def render_txt
   tmp_file = File.read('templates/txt/resume.txt.liquid')
   template = Liquid::Template.parse(tmp_file)
@@ -49,8 +62,8 @@ def render_txt
 end
 
 def render_html
-  json = @json_resume.dup
-  escape_html(json)
+  html_json = deep_copy(@json_resume)
+  escape_html(html_json)
   tmp_file = File.read('templates/html/resume.html.liquid')
   template = Liquid::Template.parse(tmp_file)
 
@@ -58,18 +71,29 @@ def render_html
   css = Sass::Engine.new(scss, syntax: :scss).render
 
   File.open('out/resume.html', 'w') do |file|
-    file.write template.render('resume' => json, 'style' => css)
+    file.write template.render('resume' => html_json, 'style' => css)
   end
 end
 
 def render_tex
-  json = @json_resume.dup
-  escape_tex(json)
+  tex_json = deep_copy(@json_resume)
+  escape_tex(tex_json)
   tmp_file = File.read('templates/tex/resume.tex.liquid')
   template = Liquid::Template.parse(tmp_file)
 
   File.open('out/resume.tex', 'w') do |file|
-    file.write template.render('resume' => json)
+    file.write template.render('resume' => tex_json)
+  end
+end
+
+def render_md
+  md_json = deep_copy(@json_resume)
+  escape_md(md_json)
+  tmp_file = File.read('templates/md/resume.md.liquid')
+  template = Liquid::Template.parse(tmp_file)
+
+  File.open('out/resume.md', 'w') do |file|
+    file.write template.render('resume' => md_json)
   end
 end
 
@@ -87,6 +111,7 @@ def generate
   render_txt
   render_html
   render_tex
+  render_md
   create_pdf
 end
 

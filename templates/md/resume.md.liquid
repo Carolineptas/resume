@@ -1,0 +1,39 @@
+{% assign b = resume.basics %}# {{ b.name }} - {{ b.label }}
+
+### Contact
+
+Email: {{ b.email }}  <!-- -->
+Web: {{ b.website }}  <!-- -->
+{% for profile in b.profiles %}{{ profile.network }} : {{ profile.url }}  <!-- -->
+{% endfor %}Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }}
+
+### Technical Skills
+{% for s in resume.skills %}{% assign kw = s.keywords | join: ", " %}
+* {{ s.name }}: {{ kw }}{% endfor %}
+
+### Summary
+
+{{ b.summary }}
+
+### Education
+{% for edu in resume.education %}
+**{{ edu.institution }}** ({{ edu.area }})
+*{{ edu.studyType }}* from {{ edu.startDate | date: "%b %Y" }} to {{ edu.endDate | date: "%b %Y" }}{% endfor %}
+
+### Experience
+{% for w in resume.work %}
+**{{ w.company }}** ({{ w.summary }})
+*{{ w.position }}* from {{ w.startDate | date: "%b %Y" }} to {{ w.endDate | date: "%b %Y" }}
+
+{% for highlight in w.highlights %}* {{ highlight }}
+{% endfor %}{% endfor %}
+
+### Awards, Scholarships, & Achievements
+{% for award in resume.awards %}
+**{{ award.title }}** ({{ award.awarder }})
+*{{ award.summary }}*, {{ award.date | date: "%b %Y" }}
+{% endfor %}
+
+### Interests
+{% for interest in resume.interests %}
+**{{ interest.name }}**: {{ interest.keywords | join: ', ' }}{% endfor %}
