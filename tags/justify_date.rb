@@ -12,7 +12,7 @@ class JustifyDate < Liquid::Tag
 
   def render(context)
     text = context[@text.strip]
-    date = Time.new(context[@date.strip]).strftime('%b %Y')
+    date = Time.strptime(context[@date.strip], '%Y-%m-%d').strftime('%b %Y')
 
     result = text
     spaces = MAX_LENGTH - text.size - date.size
