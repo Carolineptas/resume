@@ -2,9 +2,9 @@
 
 ### Contact
 
-Email: {{ b.email }}  <!-- -->
-Web: {{ b.website }}  <!-- -->
-{% for profile in b.profiles %}{{ profile.network }} : {{ profile.url }}  <!-- -->
+Email: [{{ b.email }}](mailto:{{ b.email }} "{{ b.name }}'s Email")  <!-- -->
+Web: [{{ b.website }}]({{ b.website }} "{{ b.name }}'s Website")  <!-- -->
+{% for profile in b.profiles %}{{ profile.network }} : [{{ profile.username }}]({{ profile.url }} "{{ b.name }} on {{ profile.network }}")  <!-- -->
 {% endfor %}Location : {{ b.location.city }}, {{ b.location.region }}, {{ b.location.countryCode }}
 
 ### Technical Skills

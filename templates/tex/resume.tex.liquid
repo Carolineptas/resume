@@ -26,10 +26,19 @@
 \setmainfont[BoldFont={Roboto Medium}]{Roboto Light}
 \newfontfamily\palatino[Color=color0]{Palatino Linotype}
 
-\titleformat{\section}{\Large\bfseries\addfontfeature{LetterSpace=-1}}{\thesection}{0em}{#1\hrule\vspace{-10mm}}
+\titleformat{\section}
+{ %
+  \Large
+  \bfseries
+  \addfontfeature{LetterSpace=-1}
+}
+{\thesection}{0em}{#1\hrule\vspace{-10mm}}
+
+\titlespacing*{\section}
+{0pt}{0.5em plus 1em}{1em plus 1em}
 
 \geometry{
-  top=0.5in,
+  top=0.75in,
   inner=1in,
   outer=1in,
   bottom=1in
@@ -47,8 +56,6 @@
 
 \newcommand{\header}[2]
 { %
-  % \begin{minipage}[t][][b]{0.1\hsize}
-  % \end{minipage}
   \begin{minipage}[t][][b]{0.55\hsize}
     \begin{flushleft}
       {\palatino \bfseries \fontsize{28}{28}\selectfont \trim{#1}}
@@ -85,6 +92,7 @@
       \trim{#2}
     \end{flushright}
   \end{minipage}
+  \vskip 0.1em
 }
 
 \newcommand{\itemtitle}[2]
@@ -102,6 +110,7 @@
       \trim{#2}
     \end{flushright}
   \end{minipage}
+  \vspace{0.3em}
 }
 
 \newcommand{\itemdetail}[2]
@@ -117,6 +126,7 @@
       \trim{#2}
     \end{flushright}
   \end{minipage}
+  \vspace{-1em}
 }
 
 %-------------------------------------------------------------------------------
