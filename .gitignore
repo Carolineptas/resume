@@ -18,7 +18,3 @@ Thumbs.db
 *.fdb_latexmk
 *.fls
 *.log
-*.pdf
-
-# Files and directories
-out/*

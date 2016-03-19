@@ -1,0 +1,235 @@
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[parfill]{parskip}
+\usepackage[explicit]{titlesec}
+\usepackage{trimspaces}
+\usepackage{ulem}
+\usepackage{xcolor}
+% \usepackage{showframe}
+
+%-------------------------------------------------------------------------------
+% Fonts and Appearance
+%-------------------------------------------------------------------------------
+\setlength\parindent{0pt}
+
+\definecolor{color0}{RGB}{51,51,51}
+\definecolor{color1}{RGB}{85,85,85}
+
+\defaultfontfeatures{Ligatures=TeX}
+
+\setmainfont[BoldFont={Roboto Medium}]{Roboto Light}
+\newfontfamily\palatino[Color=color0]{Palatino Linotype}
+
+\titleformat{\section}
+{ %
+  \Large
+  \bfseries
+  \addfontfeature{LetterSpace=-1}
+}
+{\thesection}{0em}{#1\hrule\vspace{-10mm}}
+
+\titlespacing*{\section}
+{0pt}{0.5em plus 1em}{1em plus 1em}
+
+\geometry{
+  top=0.75in,
+  inner=1in,
+  outer=1in,
+  bottom=1in
+}
+
+\setlist{noitemsep}
+\renewcommand\labelitemi{\small $\bullet$}
+
+%-------------------------------------------------------------------------------
+% Commands
+%-------------------------------------------------------------------------------
+
+
+\def\trim#1{\ignorespaces#1\unskip}
+
+\newcommand{\header}[2]
+{ %
+  \begin{minipage}[t][][b]{0.55\hsize}
+    \begin{flushleft}
+      {\palatino \bfseries \fontsize{28}{28}\selectfont \trim{#1}}
+      \vskip 0.5em
+      {\palatino \addfontfeature{Color=color1} \fontsize{18}{18}\selectfont \trim{#2}}
+    \end{flushleft}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t][][b]{0.44\hsize}
+    \begin{flushright}
+      Email: \href{mailto:maberger6@gmail.com}{maberger6@gmail.com}
+
+      Web: \href{http://maberger.com}{http://maberger.com}
+      
+      GitHub: \href{https://github.com/mark-berger}{mark-berger}
+      
+      LinkedIn: \href{https://ca.linkedin.com/in/maberger}{maberger}
+      
+      Location: Toronto, Ontario, CA
+    \end{flushright}
+  \end{minipage}
+  \vskip 1em
+}
+
+\newcommand{\itemlist}[2]
+{ %
+  \begin{minipage}[b]{0.39\hsize}
+    \begin{flushleft}
+      \trim{#1}
+    \end{flushleft}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.59\hsize}
+    \begin{flushright}
+      \bfseries
+      \trim{#2}
+    \end{flushright}
+  \end{minipage}
+  \vskip 0.1em
+}
+
+\newcommand{\itemtitle}[2]
+{ %
+  \begin{minipage}[b]{0.7\hsize}
+    \begin{flushleft}
+      \bfseries
+      \trim{#1}
+    \end{flushleft}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.3\hsize}
+    \begin{flushright}
+      \bfseries
+      \trim{#2}
+    \end{flushright}
+  \end{minipage}
+  \vspace{0.3em}
+}
+
+\newcommand{\itemdetail}[2]
+{ %
+  \begin{minipage}[b]{0.7\hsize}
+    \begin{flushleft}
+      \trim{#1}
+    \end{flushleft}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.3\hsize}
+    \begin{flushright}
+      \trim{#2}
+    \end{flushright}
+  \end{minipage}
+  \vspace{-1em}
+}
+
+%-------------------------------------------------------------------------------
+% Resume
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\header
+{ Mark Berger }
+{ BASc Computer Engineering }
+
+\section*{Technical Skills}
+
+\itemlist{ Front-end tech/frameworks: }{ HTML5, CSS3, JavaScript, D3.js, AngularJS 1.x }
+\itemlist{ Back-end web frameworks: }{ Django, Flask, Ruby on Rails, ASP.NET }
+\itemlist{ Relational databases: }{ MySQL, SQL Server, PostgresSQL, SQLite }
+\itemlist{ Object-oriented programming: }{ Python, Java, VB.NET, C\# }
+\itemlist{ Platforms: }{ Web, Android, Unix, Embedded Systems }
+
+\section*{Summary}
+
+I'm a software developer from Ontario, Canada. I recently completed my BASc in Computer Engineering at the University of Waterloo and I'm looking for new opportunities. Working with both hardware and software on various platforms from embedded systems to mobile phones has broadened my experience, but you'll find me most at home developing for the web. I really enjoy building client-side web applications, and have a strong foundation in server-side development and working with databases. Consistency and clear communication have always been very important to me and I'm a quick learner who is always eager to pick up new technologies.
+
+\section*{Education}
+
+\itemtitle{ University of Waterloo }{ Waterloo, ON }
+\itemdetail{ BASc Honours Computer Engineering }{ Sep 2010 --- Jun 2015 }
+
+\section*{Experience}
+
+\itemtitle{ ShopLocket }{ Toronto, ON }
+\itemdetail{ Software Developer, Co-op }{ Sep 2014 --- Dec 2014 }
+\begin{itemize}
+  \item Created a powerful Jekyll build system using GruntJS, Bower, Haml, Sass
+  \item Added new features to a shopping cart built with AngularJS
+  \item Developed responsive, fluid, and interactive visualizations using D3.js
+  \item Designed a system to extract data from Facebook, Twitter, Google+ APIs
+  \item Individually built a dashboard for monitoring and visualizing community
+\end{itemize}
+
+\itemtitle{ BNOTIONS }{ Toronto, ON }
+\itemdetail{ Senior Software Engineer, Co-op }{ Sep 2013 --- Dec 2013 }
+\begin{itemize}
+  \item Built a rich and dynamic single-page web application using AngularJS
+  \item Gained experience with Sass, Jade, GruntJS, Jasmine, npm
+  \item Developed a RESTful API with Django, interfacing with Facebook APIs
+  \item Managed pull requests and code reviews in an agile team using git-flow
+\end{itemize}
+
+\itemtitle{ Flipp }{ Toronto, ON }
+\itemdetail{ Senior Web Developer, Co-op }{ Jan 2013 --- Apr 2013 }
+\begin{itemize}
+  \item Created ad modules in CSS, JS, HTML serving millions of views/day
+  \item Developed an authenticated API for returning JSON, RSS, and XML data
+  \item Automated reporting by creating a wrapper for the Google Analytics API
+  \item Feature development with Rails, including RSpec test cases and TDD
+  \item Gained experience in Unix with an agile team collaborating using Git
+\end{itemize}
+
+\itemtitle{ Orbit Group Partners Inc. }{ Markham, ON }
+\itemdetail{ Software Developer, Co-op }{ Sep 2011 --- Aug 2012 }
+\begin{itemize}
+  \item Rebuilt messaging/notification system using JSON web services
+  \item Developed scripts, architecture and optimized stored procedures
+  \item Designed UI elements to enhance usability and performance
+  \item Updated HTML and CSS throughout the app with a modern look and feel
+  \item Played an integral role in developing, testing, documenting a major release
+\end{itemize}
+
+\itemtitle{ Orbit Group Partners Inc. }{ Markham, ON }
+\itemdetail{ Business Systems Analyst, Co-op }{ Jan 2011 --- Apr 2011 }
+\begin{itemize}
+  \item Provided efficient resolution directly to clients, triaging technical issues
+  \item Demonstrated technical expertise finding solutions to unique problems
+  \item Developed SQL scripts and queries optimized for producing reports
+  \item Automated reporting with VBA macros; refined routine tasks
+\end{itemize}
+
+
+\section*{Awards, Scholarships, \& Achievements}
+
+\itemtitle{ Graduation with Distinction }{ University of Waterloo }
+\itemdetail{ Attained a cumulative average of at least 80\% }{ Jun 2015 }
+
+\itemtitle{ Outstanding Co-op Evaluations }{ University of Waterloo }
+\itemdetail{ Significantly exceeded all expectations for all 6 terms }{ Jun 2015 }
+
+\itemtitle{ Nortel Networks \& President’s Entrance Scholarship }{ University of Waterloo }
+\itemdetail{ Awarded to top students entering Computer Engineering }{ Nov 2010 }
+
+\itemtitle{ Best Presentation, U of T Space Design Contest }{ University of Toronto }
+\itemdetail{ First place for international engineering competition }{ May 2010 }
+
+
+\section*{Interests}
+
+\textbf{\trim{ Design: }} User interfaces, user experience, layouts and themes, \LaTeX\
+
+\textbf{\trim{ Internet: }} Latest web tech, open-source projects, software development blogs
+
+\textbf{\trim{ Fun: }} Film, photography, television, video games, hardware, biking/walking
+
+
+\end{document}

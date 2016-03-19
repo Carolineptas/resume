@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <title>Mark Berger</title>
+    <style>
+      /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden], template {
+  display: none; }
+
+a {
+  background-color: transparent; }
+
+a:active, a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code, kbd, pre, samp {
+  font-family: monospace,monospace;
+  font-size: 1em; }
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button, select {
+  text-transform: none; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+html, body {
+  font-size: 62.5%;
+  height: 100%; }
+
+body {
+  color: #333;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5; }
+
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: -0.05rem; }
+
+h1 {
+  border: none;
+  font-family: "Palatino Linotype", Palatino, Garamond, Georgia, serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 0; }
+
+h1 small {
+  font-size: 2.5rem;
+  font-weight: 500; }
+
+h2 {
+  border-bottom: 0.1rem solid #333;
+  font-size: 2.4rem; }
+
+h3 {
+  font-size: 2.2rem; }
+
+h2.title {
+  border: none;
+  color: #555;
+  font-family: "Palatino Linotype", Palatino, Garamond, Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-top: 0; }
+
+small {
+  font-size: 90%; }
+
+a {
+  color: #2980b9; }
+
+header a {
+  color: #333;
+  text-decoration: none; }
+
+.logo, .mini-icon {
+  display: inline-block;
+  height: 10rem;
+  vertical-align: middle;
+  width: 10rem; }
+
+.mini-icon {
+  height: 2rem;
+  width: 2rem; }
+
+.summary p {
+  text-align: justify; }
+
+.contact {
+  font-size: 1.6rem; }
+
+.container {
+  margin: 5rem auto 10rem auto;
+  max-width: 72rem; }
+
+.item {
+  margin-top: 0.5rem; }
+
+.item::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right;
+  text-align: right; }
+
+.right-header {
+  float: right;
+  padding-left: 2rem;
+  text-align: left; }
+
+.date {
+  font-size: 90%; }
+
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,500,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="item">
+          <div class="left">
+            <div class="item">
+              <div class="left">
+                <div class="logo">
+                  <svg viewBox="0 0 500 500">
+                    <path fill="#34bb6d" d="M426.3 72.7A250 250 0 0 1 491 314.2 250 250 0 0 1 314.2 491 250 250 0 0 1 72.7 426.3L249.5 249.5Z"></path>
+                    <path fill="#1aa153" d="m143.2 356.8 140.4 140.4C401.3 480.3 482.8 394 497.8 279.1L359 140.3Z"></path>
+                    <path fill="#27ae60" d="m73.2 426.8a250 250 0 0 1 0-353.6 250 250 0 0 1 353.6 0L250 250Z"></path>
+                    <path fill="#d5d5d5" d="m142.9 141.5 0 216 215.9 0 0-216-107.7 108.2z"></path>
+                    <path fill="#eaeaea" d="m251 249.4 0 107.6-108-108 0-107.7z"></path>
+                    <path fill="#fff" d="m251.1 248.9 0 107.6 108-108 0-107.7z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="right-header">
+                <h1>Mark Berger</h1>
+                <h2 class="title">BASc Computer Engineering</h2>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <section class="contact">
+              <div class="email">
+                <a href="mailto:maberger6@gmail.com">
+                  maberger6@gmail.com
+                  <div class="mini-icon">
+                    <svg viewBox="0 0 685 685">
+                      <path fill="#444" d="M0,342.5a342.5,342.5 0 1,0 685,0a342.5,342.5 0 1,0 -685,0"></path>
+                      <path fill="#f6f6f6" d="m331.3 367.5 17.8 0 161.5-161.5-340 0zM507.9 478.6l-338.5 0 112.7-112.7c21.2 21.4 38.3 33 57.2 33 17.2 0 29.4-5.4 56.3-32.5zM259.8 341.4l-111.7-111.7 0 224.6zM417.3 341.4l111.7-111.7 0 224.6z"></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+              <div class="website">
+                <a href="http://maberger.com">
+                  http://maberger.com
+                  <div class="mini-icon">
+                    <svg viewBox="0 0 685 685">
+                      <path fill="#444" d="M0,342.5a342.5,342.5 0 1,0 685,0a342.5,342.5 0 1,0 -685,0"></path>
+                      <path fill="#f6f6f6" d="m246 467 73-81 61 141c13 25 52 4 38-24l-57-133 103 0-195-211c-3-3-23-9-24 9z"></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="network">
+                <a href="https://github.com/mark-berger">
+                  mark-berger
+                  <div class="mini-icon">
+                  
+                  <svg viewBox="0 0 685 685">
+                    <path fill="#444" d="M0,344a342,342 0 1,0 684,0a342,342 0 1,0 -684,0"></path>
+                    <path fill="#f6f6f6" d="m289.2 431.3c-7.6 10.8-12.4 21.6-14.2 32.3-5.4 4.7-20.6 7.6-38.2 5.8-7-0.9-19-5.7-43.6-38.9-15.7-15.8-27-13.8-30.3-14-4.9 0.2-9.1 1.4-11.6 5.5 8.8 7.3 17.5 15.3 26.7 26 3.6 3.9 9.9 20.1 21.1 35.2 17.9 18.6 42.2 19.2 74.8 16.5 1.9 17.1 1.9 33.6 0 52.1 48.7 12.4 81.1 9.2 128.3 1.8l-0.7-85.4c-1-12.2-4.3-24.6-14.9-37.8 65.5-10.5 110.4-39.4 112.6-111.2 1.4-28.6-2.3-56.2-25.4-79.9 5.4-19.6 7.1-40.5-2.9-65.4-21.9-3.4-45 9.1-68.3 24.3-39.5-9.5-81.4-12.4-128.6 0.4-21-14.3-42.1-28.6-68.3-25.4-9.6 23.6-9.7 45.7-2.9 66.9-25.1 30.2-25.5 47.3-26.2 68.7 2.9 106.5 75.4 114.8 112.6 122.4z"></path>
+                  </svg>
+                  
+                  </div>
+                </a>
+              </div>
+              
+              <div class="network">
+                <a href="https://ca.linkedin.com/in/maberger">
+                  maberger
+                  <div class="mini-icon">
+                  
+                  <svg viewBox="0 0 685 685">
+                    <path fill="#444" d="M0,342.5a342.5,342.5 0 1,0 685,0a342.5,342.5 0 1,0 -685,0"></path>
+                    <path fill="#f6f6f6" d="M180.9,195.5a38.5,35.7 0 1,0 77,0a38.5,35.7 0 1,0 -77,0"></path>
+                    <path fill="#f6f6f6" d="m 184.2,257.1 69,0 0,205.5 -69,0 z"></path>
+                    <path fill="#f6f6f6" d="m288.9 462.3 0-205.5 69.5 0 0 25.1c29.9-43 98.8-37.5 121.3 0 16.1 26.6 15.7 37.8 17.4 62.9l0 118-69.5 0-0.8-115.7c-1-24.9-10.7-38.4-32.1-38.7-15.9 0.4-35.4 14.1-35.4 31l0 123.7z"></path>
+                  </svg>
+                  
+                  </div>
+                </a>
+              </div>
+              
+              <div class="location">
+                Toronto, Ontario, CA
+                <div class="mini-icon">
+                  <svg viewBox="0 0 685 685">
+                    <path fill="#444" d="M0 342.5a342.5 342.5 0 1 0 685 0 342.5 342.5 0 1 0-685 0"></path>
+                    <path fill="#f6f6f6" d="m343.9 577.9c2.3 2.9 5.5 2.9 7.6 0l104-206.8c33.3-60.7 67.8-121.3 0-196.3-60.6-61.4-146.3-70.7-216 0-63.1 72.8-39.8 133.6 0 200z"></path>
+                    <path fill="#444" d="M291.7,273.6a56.9,55.9 0 1,0 113.8,0a56.9,55.9 0 1,0 -113.8,0"></path>
+                  </svg>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </header>
+      <section class="skills">
+        <h2>Technical Skills</h2>
+        
+        <div class="item">
+          <div class="left">
+            Front-end tech/frameworks:
+          </div>
+          <div class="right">
+            <strong>
+              HTML5, CSS3, JavaScript, D3.js, AngularJS 1.x
+            </strong>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="left">
+            Back-end web frameworks:
+          </div>
+          <div class="right">
+            <strong>
+              Django, Flask, Ruby on Rails, ASP.NET
+            </strong>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="left">
+            Relational databases:
+          </div>
+          <div class="right">
+            <strong>
+              MySQL, SQL Server, PostgresSQL, SQLite
+            </strong>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="left">
+            Object-oriented programming:
+          </div>
+          <div class="right">
+            <strong>
+              Python, Java, VB.NET, C#
+            </strong>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="left">
+            Platforms:
+          </div>
+          <div class="right">
+            <strong>
+              Web, Android, Unix, Embedded Systems
+            </strong>
+          </div>
+        </div>
+        
+      </section>
+      <section class="summary">
+        <h2>Summary</h2>
+        <p>I'm a software developer from Ontario, Canada. I recently completed my BASc in Computer Engineering at the University of Waterloo and I'm looking for new opportunities. Working with both hardware and software on various platforms from embedded systems to mobile phones has broadened my experience, but you'll find me most at home developing for the web. I really enjoy building client-side web applications, and have a strong foundation in server-side development and working with databases. Consistency and clear communication have always been very important to me and I'm a quick learner who is always eager to pick up new technologies.</p>
+      </section>
+      <section class="education">
+        <h2>Education</h2>
+        
+        <div class="item">
+          <div class="left">
+            <div class="institution">
+              <strong>
+                University of Waterloo
+              </strong>
+            </div>
+            <div class="studyType">
+              BASc Honours Computer Engineering
+            </div>
+          </div>
+          <div class="right">
+            <div class="area">
+              <strong>
+                Waterloo, ON
+              </strong>
+            </div>
+            <div class="date">
+              <span class="startDate">
+                Sep 2010
+              </span>
+              
+              <span class="endDate">
+                - Jun 2015
+              </span>
+              
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <section class="experience">
+        <h2>Experience</h2>
+        
+        <div class="item">
+          <div class="left">
+            <div class="company">
+              <strong>
+                ShopLocket
+              </strong>
+            </div>
+            <div class="position">
+              Software Developer, Co-op
+            </div>
+          </div>
+          <div class="right">
+            <div class="work-location">
+              <strong>
+                Toronto, ON
+              </strong>
+            </div>
+            <div class="date">
+              <span class="startDate">
+                Sep 2014
+              </span>
+              
+              <span class="endDate">
+                - Dec 2014
+              </span>
+              
+            </div>
+          </div>
+        </div>
+        <ul>
+          
+          <li>Created a powerful Jekyll build system using GruntJS, Bower, Haml, Sass</li>
+          
+          <li>Added new features to a shopping cart built with AngularJS</li>
+          
+          <li>Developed responsive, fluid, and interactive visualizations using D3.js</li>
+          
+          <li>Designed a system to extract data from Facebook, Twitter, Google+ APIs</li>
+          
+          <li>Individually built a dashboard for monitoring and visualizing community</li>
+          
+        </ul>
+        
+        <div class="item">
+          <div class="left">
+            <div class="company">
+              <strong>
+                BNOTIONS
+              </strong>
+            </div>
+            <div class="position">
+              Senior Software Engineer, Co-op
+            </div>
+          </div>
+          <div class="right">
+            <div class="work-location">
+              <strong>
+                Toronto, ON
+              </strong>
+            </div>
+            <div class="date">
+              <span class="startDate">
+                Sep 2013
+              </span>
+              
+              <span class="endDate">
+                - Dec 2013
+              </span>
+              
+            </div>
+          </div>
+        </div>
+        <ul>
+          
+          <li>Built a rich and dynamic single-page web application using AngularJS</li>
+          
+          <li>Gained experience with Sass, Jade, GruntJS, Jasmine, npm</li>
+          
+          <li>Developed a RESTful API with Django, interfacing with Facebook APIs</li>
+          
+          <li>Managed pull requests and code reviews in an agile team using git-flow</li>
+          
+        </ul>
+        
+        <div class="item">
+          <div class="left">
+            <div class="company">
+              <strong>
+                Flipp
+              </strong>
+            </div>
+            <div class="position">
+              Senior Web Developer, Co-op
+            </div>
+          </div>
+          <div class="right">
+            <div class="work-location">
+              <strong>
+                Toronto, ON
+              </strong>
+            </div>
+            <div class="date">
+              <span class="startDate">
+                Jan 2013
+              </span>
+              
+              <span class="endDate">
+                - Apr 2013
+              </span>
+              
+            </div>
+          </div>
+        </div>
+        <ul>
+          
+          <li>Created ad modules in CSS, JS, HTML serving millions of views/day</li>
+          
+          <li>Developed an authenticated API for returning JSON, RSS, and XML data</li>
+          
+          <li>Automated reporting by creating a wrapper for the Google Analytics API</li>
+          
+          <li>Feature development with Rails, including RSpec test cases and TDD</li>
+          
+          <li>Gained experience in Unix with an agile team collaborating using Git</li>
+          
+        </ul>
+        
+        <div class="item">
+          <div class="left">
+            <div class="company">
+              <strong>
+                Orbit Group Partners Inc.
+              </strong>
+            </div>
+            <div class="position">
+              Software Developer, Co-op
+            </div>
+          </div>
+          <div class="right">
+            <div class="work-location">
+              <strong>
+                Markham, ON
+              </strong>
+            </div>
+            <div class="date">
+              <span class="startDate">
+                Sep 2011
+              </span>
+              
+              <span class="endDate">
+                - Aug 2012
+              </span>
+              
+            </div>
+          </div>
+        </div>
+        <ul>
+          
+          <li>Rebuilt messaging/notification system using JSON web services</li>
+          
+          <li>Developed scripts, architecture and optimized stored procedures</li>
+          
+          <li>Designed UI elements to enhance usability and performance</li>
+          
+          <li>Updated HTML and CSS throughout the app with a modern look and feel</li>
+          
+          <li>Played an integral role in developing, testing, documenting a major release</li>
+          
+        </ul>
+        
+        <div class="item">
+          <div class="left">
+            <div class="company">
+              <strong>
+                Orbit Group Partners Inc.
+              </strong>
+            </div>
+            <div class="position">
+              Business Systems Analyst, Co-op
+            </div>
+          </div>
+          <div class="right">
+            <div class="work-location">
+              <strong>
+                Markham, ON
+              </strong>
+            </div>
+            <div class="date">
+              <span class="startDate">
+                Jan 2011
+              </span>
+              
+              <span class="endDate">
+                - Apr 2011
+              </span>
+              
+            </div>
+          </div>
+        </div>
+        <ul>
+          
+          <li>Provided efficient resolution directly to clients, triaging technical issues</li>
+          
+          <li>Demonstrated technical expertise finding solutions to unique problems</li>
+          
+          <li>Developed SQL scripts and queries optimized for producing reports</li>
+          
+          <li>Automated reporting with VBA macros; refined routine tasks</li>
+          
+        </ul>
+        
+      </section>
+      <section class="awards">
+        <h2>Awards, Scholarships, &amp; Achievements</h2>
+        
+        <div class="item">
+          <div class="left">
+            <div class="title">
+              <strong>
+                Graduation with Distinction
+              </strong>
+            </div>
+            <div class="award-summary">
+              Attained a cumulative average of at least 80%
+            </div>
+          </div>
+          <div class="right">
+            <div class="awarder">
+              <strong>
+                University of Waterloo
+              </strong>
+            </div>
+            <div class="date">
+              Jun 2015
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="left">
+            <div class="title">
+              <strong>
+                Outstanding Co-op Evaluations
+              </strong>
+            </div>
+            <div class="award-summary">
+              Significantly exceeded all expectations for all 6 terms
+            </div>
+          </div>
+          <div class="right">
+            <div class="awarder">
+              <strong>
+                University of Waterloo
+              </strong>
+            </div>
+            <div class="date">
+              Jun 2015
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="left">
+            <div class="title">
+              <strong>
+                Nortel Networks &amp; President’s Entrance Scholarship
+              </strong>
+            </div>
+            <div class="award-summary">
+              Awarded to top students entering Computer Engineering
+            </div>
+          </div>
+          <div class="right">
+            <div class="awarder">
+              <strong>
+                University of Waterloo
+              </strong>
+            </div>
+            <div class="date">
+              Nov 2010
+            </div>
+          </div>
+        </div>
+        
+        <div class="item">
+          <div class="left">
+            <div class="title">
+              <strong>
+                Best Presentation, U of T Space Design Contest
+              </strong>
+            </div>
+            <div class="award-summary">
+              First place for international engineering competition
+            </div>
+          </div>
+          <div class="right">
+            <div class="awarder">
+              <strong>
+                University of Toronto
+              </strong>
+            </div>
+            <div class="date">
+              May 2010
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      <section class="interests">
+        <h2>Interests</h2>
+        
+        <div class="interest">
+          <strong>Design: </strong>User interfaces, user experience, layouts and themes, LaTeX
+        </div>
+        
+        <div class="interest">
+          <strong>Internet: </strong>Latest web tech, open-source projects, software development blogs
+        </div>
+        
+        <div class="interest">
+          <strong>Fun: </strong>Film, photography, television, video games, hardware, biking/walking
+        </div>
+        
+      </section>
+    </div>
+  </body>
+</html>
