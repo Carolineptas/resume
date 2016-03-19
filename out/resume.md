@@ -2,10 +2,10 @@
 
 ### Contact
 
-Email: [maberger6@gmail.com](mailto:maberger6@gmail.com "Mark Berger's Email")  <!-- -->
-Web: [http://maberger.com](http://maberger.com "Mark Berger's Website")  <!-- -->
-GitHub : [mark-berger](https://github.com/mark-berger "Mark Berger on GitHub")  <!-- -->
-LinkedIn : [maberger](https://ca.linkedin.com/in/maberger "Mark Berger on LinkedIn")  <!-- -->
+Email: [maberger6@gmail.com](mailto:maberger6@gmail.com "Mark Berger's Email")  
+Web: [http://maberger.com](http://maberger.com "Mark Berger's Website")  
+GitHub : [mark-berger](https://github.com/mark-berger "Mark Berger on GitHub")  
+LinkedIn : [maberger](https://ca.linkedin.com/in/maberger "Mark Berger on LinkedIn")  
 Location : Toronto, Ontario, CA
 
 ### Technical Skills
@@ -22,12 +22,12 @@ I'm a software developer from Ontario, Canada. I recently completed my BASc in C
 
 ### Education
 
-**University of Waterloo** (Waterloo, ON)
+**University of Waterloo** (Waterloo, ON)  
 *BASc Honours Computer Engineering* from Sep 2010 to Jun 2015
 
 ### Experience
 
-**ShopLocket** (Toronto, ON)
+**ShopLocket** (Toronto, ON)  
 *Software Developer, Co-op* from Sep 2014 to Dec 2014
 
 * Created a powerful Jekyll build system using GruntJS, Bower, Haml, Sass
@@ -36,7 +36,7 @@ I'm a software developer from Ontario, Canada. I recently completed my BASc in C
 * Designed a system to extract data from Facebook, Twitter, Google+ APIs
 * Individually built a dashboard for monitoring and visualizing community
 
-**BNOTIONS** (Toronto, ON)
+**BNOTIONS** (Toronto, ON)  
 *Senior Software Engineer, Co-op* from Sep 2013 to Dec 2013
 
 * Built a rich and dynamic single-page web application using AngularJS
@@ -44,7 +44,7 @@ I'm a software developer from Ontario, Canada. I recently completed my BASc in C
 * Developed a RESTful API with Django, interfacing with Facebook APIs
 * Managed pull requests and code reviews in an agile team using git-flow
 
-**Flipp** (Toronto, ON)
+**Flipp** (Toronto, ON)  
 *Senior Web Developer, Co-op* from Jan 2013 to Apr 2013
 
 * Created ad modules in CSS, JS, HTML serving millions of views/day
@@ -53,7 +53,7 @@ I'm a software developer from Ontario, Canada. I recently completed my BASc in C
 * Feature development with Rails, including RSpec test cases and TDD
 * Gained experience in Unix with an agile team collaborating using Git
 
-**Orbit Group Partners Inc.** (Markham, ON)
+**Orbit Group Partners Inc.** (Markham, ON)  
 *Software Developer, Co-op* from Sep 2011 to Aug 2012
 
 * Rebuilt messaging/notification system using JSON web services
@@ -62,7 +62,7 @@ I'm a software developer from Ontario, Canada. I recently completed my BASc in C
 * Updated HTML and CSS throughout the app with a modern look and feel
 * Played an integral role in developing, testing, documenting a major release
 
-**Orbit Group Partners Inc.** (Markham, ON)
+**Orbit Group Partners Inc.** (Markham, ON)  
 *Business Systems Analyst, Co-op* from Jan 2011 to Apr 2011
 
 * Provided efficient resolution directly to clients, triaging technical issues
@@ -73,21 +73,21 @@ I'm a software developer from Ontario, Canada. I recently completed my BASc in C
 
 ### Awards, Scholarships, & Achievements
 
-**Graduation with Distinction** (University of Waterloo)
+**Graduation with Distinction** (University of Waterloo)  
 *Attained a cumulative average of at least 80%*, Jun 2015
 
-**Outstanding Co-op Evaluations** (University of Waterloo)
+**Outstanding Co-op Evaluations** (University of Waterloo)  
 *Significantly exceeded all expectations for all 6 terms*, Jun 2015
 
-**Nortel Networks & President’s Entrance Scholarship** (University of Waterloo)
+**Nortel Networks & President’s Entrance Scholarship** (University of Waterloo)  
 *Awarded to top students entering Computer Engineering*, Nov 2010
 
-**Best Presentation, U of T Space Design Contest** (University of Toronto)
+**Best Presentation, U of T Space Design Contest** (University of Toronto)  
 *First place for international engineering competition*, May 2010
 
 
 ### Interests
 
-**Design**: User interfaces, user experience, layouts and themes, LaTeX
-**Internet**: Latest web tech, open-source projects, software development blogs
-**Fun**: Film, photography, television, video games, hardware, biking/walking
+**Design**: User interfaces, user experience, layouts and themes, LaTeX  
+**Internet**: Latest web tech, open-source projects, software development blogs  
+**Fun**: Film, photography, television, video games, hardware, biking/walking  
